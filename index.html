@@ -19,7 +19,17 @@
 
       <div id="image-list"></div>
 
-      <button id="generate-btn" disabled>Generate PDF</button>
+      <div id="controls">
+        <div id="filename-group">
+          <label for="filename-input">Filename:</label>
+          <input type="text" id="filename-input" placeholder="pdf-file" />
+          <span>.pdf</span>
+        </div>
+        <div id="action-buttons">
+          <button id="clear-btn" disabled>Remove All</button>
+          <button id="generate-btn" disabled>Generate PDF</button>
+        </div>
+      </div>
     </main>
 
     <script type="module" src="/src/main.ts"></script>

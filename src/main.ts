@@ -13,6 +13,8 @@ const dropZone = document.getElementById("drop-zone")!;
 const fileInput = document.getElementById("file-input") as HTMLInputElement;
 const imageList = document.getElementById("image-list")!;
 const generateBtn = document.getElementById("generate-btn") as HTMLButtonElement;
+const clearBtn = document.getElementById("clear-btn") as HTMLButtonElement;
+const filenameInput = document.getElementById("filename-input") as HTMLInputElement;
 
 // Sortable setup
 Sortable.create(imageList, {
@@ -49,6 +51,13 @@ fileInput.addEventListener("change", () => {
     addFiles(fileInput.files);
     fileInput.value = "";
   }
+});
+
+// Clear all images
+clearBtn.addEventListener("click", () => {
+  images.length = 0;
+  imageList.innerHTML = "";
+  updateButtonState();
 });
 
 // Generate PDF
@@ -143,7 +152,9 @@ function updateOrderBadges() {
 }
 
 function updateButtonState() {
-  generateBtn.disabled = images.length === 0;
+  const empty = images.length === 0;
+  generateBtn.disabled = empty;
+  clearBtn.disabled = empty;
 }
 
 function loadImage(src: string): Promise<HTMLImageElement> {
@@ -202,5 +213,6 @@ async function generatePDF() {
     doc.addImage(images[i].dataUrl, drawX, drawY, drawW, drawH);
   }
 
-  doc.save("images.pdf");
+  const name = filenameInput.value.trim() || "pdf-file";
+  doc.save(`${name}.pdf`);
 }

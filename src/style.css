@@ -142,15 +142,57 @@ main {
   opacity: 0.3;
 }
 
-#generate-btn {
-  display: block;
-  width: 100%;
+#controls {
   margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#filename-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#filename-group label {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+#filename-input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #eee;
+  background: #16213e;
+  border: 2px solid #0f3460;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#filename-input:focus {
+  border-color: #e94560;
+}
+
+#filename-group span {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+#action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+#clear-btn,
+#generate-btn {
+  flex: 1;
   padding: 1rem;
   font-size: 1.3rem;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, #e94560, #c62a40);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -158,15 +200,26 @@ main {
   letter-spacing: 1px;
 }
 
+#generate-btn {
+  background: linear-gradient(135deg, #e94560, #c62a40);
+}
+
+#clear-btn {
+  background: linear-gradient(135deg, #0f3460, #16213e);
+}
+
+#clear-btn:disabled,
 #generate-btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
 
+#clear-btn:not(:disabled):hover,
 #generate-btn:not(:disabled):hover {
   transform: translateY(-1px);
 }
 
+#clear-btn:not(:disabled):active,
 #generate-btn:not(:disabled):active {
   transform: translateY(1px);
 }
