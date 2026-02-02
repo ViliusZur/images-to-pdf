@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FUCK YEAH, A PDF GENERATOR!</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>FUCK YEAH, A PDF GENERATOR!</h1>
+    </header>
+
+    <main>
+      <div id="drop-zone">
+        <p>Drag & drop images here or click to select</p>
+        <input type="file" id="file-input" multiple accept="image/jpeg,image/png" />
+      </div>
+
+      <div id="image-list"></div>
+
+      <button id="generate-btn" disabled>Generate PDF</button>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

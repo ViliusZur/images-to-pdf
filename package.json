@@ -1,0 +1,22 @@
+{
+  "name": "images-to-pdf",
+  "version": "1.0.0",
+  "description": "Images to PDF converter",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jspdf": "^4.1.0",
+    "sortablejs": "^1.15.6",
+    "typescript": "^5.9.3",
+    "vite": "^6.4.1"
+  },
+  "devDependencies": {
+    "@types/sortablejs": "^1.15.9"
+  }
+}
